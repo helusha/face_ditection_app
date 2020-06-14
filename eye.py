@@ -40,12 +40,12 @@ for face in res[0][0]:
 
 print(image.dtype)
 print(image.shape)
+
 img = cv2.imread("face.png")
-if img.shape[:-1] != (672, 384): # 大きさが違うときリサイズ
-    img = cv2.resize(img, ( 672, 384))
+if img.shape[:-1] != (w ,h): # 大きさが違うときリサイズ
+    img = cv2.resize(img, (w, h))
 
-cv2.rectangle(img, (295, 57), (395, 199), (0, 255, 0), 2)
-
+cv2.rectangle(img, (xmin, ymin), (xmax, ymax), (0, 255, 0), 2)
 cv2.imshow('image',img)
 cv2.waitKey()
 cv2.destroyAllWindows()
